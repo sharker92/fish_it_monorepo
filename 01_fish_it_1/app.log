@@ -1,0 +1,18 @@
+root - ERROR - Unable to retrieve or parse page: <Pages url=cuatro>
+ - 2021-03-17 14:51:48,130
+Traceback (most recent call last):
+  File "/Users/sharker/OneDrive/03Programming/01_fish_it/future_fishit_spider.py", line 142, in <module>
+    document = requests.get(qs.url, headers=headers)
+  File "/Users/sharker/.local/share/virtualenvs/01_fish_it-mn68yNWd/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/sharker/.local/share/virtualenvs/01_fish_it-mn68yNWd/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/sharker/.local/share/virtualenvs/01_fish_it-mn68yNWd/lib/python3.9/site-packages/requests/sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "/Users/sharker/.local/share/virtualenvs/01_fish_it-mn68yNWd/lib/python3.9/site-packages/requests/sessions.py", line 456, in prepare_request
+    p.prepare(
+  File "/Users/sharker/.local/share/virtualenvs/01_fish_it-mn68yNWd/lib/python3.9/site-packages/requests/models.py", line 316, in prepare
+    self.prepare_url(url, params)
+  File "/Users/sharker/.local/share/virtualenvs/01_fish_it-mn68yNWd/lib/python3.9/site-packages/requests/models.py", line 390, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'cuatro': No schema supplied. Perhaps you meant http://cuatro?

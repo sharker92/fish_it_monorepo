@@ -1,0 +1,11 @@
+.DS_Store
+.vscode
+*.sqlite
+*.db
+data/
+env/
+Pipfile.lock
+__pycache__
+tempCodeRunnerFile.py
+Extras/
+try_help.py

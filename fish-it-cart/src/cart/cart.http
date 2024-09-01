@@ -1,0 +1,138 @@
+@host = https://prod.alsuperapi.com
+# Local storage
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1NDM1MiwiZW1haWwiOiJzaGFya2VyOTJAaG90bWFpbC5jb20iLCJhdHRyaWJ1dGVzIjoiQW5kcmVzIE1vcmFsZXMgUmV5ZXMiLCJnZW5kZXIiOiJIIiwidHlwZSI6ImNsaWVudCIsImRhdGVfYmlydGgiOiIxOTkyLTA1LTExIiwibWVtYmVyc2hpcCI6IjAyMDk0NTk0NzA1NSIsImZpcmViYXNlX3Rva2VucyI6WyJmaDFDam9aU1EwNnJScDl0cElaM0RxOkFQQTkxYkVHQWZmcW5mTUVGX19jOGJPQ1R2enFQTHF5TFZfUG1HTWl4aUtvWkdWeGJyYjMwYWgxUnFzVzVpTFVHMHBkWGpJdEZwQ3I3Nlp0QjVMV3plUnFyNGlsTGJ2cGZrN2VXOHlkOENRUms5cHRQdllpUzJYMGtBejVPaTBab3NMWW5PSjVIVUlXIl0sImlhdCI6MTcxNTQ2NjM5M30.Kao3-uYfp6O1RBv44cFCT5eoYddG5QvFt-ehkYja2z8
+@refresh_token = "033c7ef2-7aa4-4ed3-80ff-1060d99004b3"
+@firebasetoken = fh1CjoZSQ06rRp9tpIZ3Dq:APA91bEGAffqnfMEF__c8bOCTvzqPLqyLV_PmGMixiKoZGVxbrb30ah1RqsW5iLUG0pdXjItFpCr76ZtB5LWzeRqr4ilLbvpfk7eW8yd8CQRk9ptPvYiS2X0kAz5Oi0ZosLYnOJ5HUIW
+###
+# POST /auth/login
+###
+POST  {{host}}/auth/login
+Content-Type: application/json
+
+{
+  "email":"sharker92@hotmail.com",
+  "password":"sharker05"
+}
+
+###
+# GET /users/user-data
+###
+GET {{host}}/users/user-data
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+# GET /cart
+### https://alsuper.com/carrito
+GET {{host}}/cart
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+# GET /cart/verify-cart
+###
+GET {{host}}/cart/verify-cart
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+# POST /cart/items
+###
+POST {{host}}/cart/items
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "items": [
+  {
+    "name": "Brisket",
+    "itemId": 14035,
+    "quantity": 4.5,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "comment": "1 kilo",
+    "unidad": "4.5 es la unidad por pieza calculada por alsuper"
+  }
+  
+    ]
+}
+
+###
+# PUT /cart/items/quantity
+### Cambiar la unidad cambia en como lo despliega en el carrito
+PUT {{host}}/cart/items/quantity
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "itemId": 461362,
+    "quantity": 0.23,
+    "branch_id": 6,
+    "unit": "GRANEL", 
+    "variant": "Rebanada"
+}
+
+###
+# PUT /cart/items/comments
+###
+PUT {{host}}/cart/items/comments
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+  {
+    "name": "Brisket",
+    "itemId": 14035,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "comment": "1 kilo",
+    "unidad": "4.5 es la unidad por pieza calculada por alsuper"
+  }
+
+###
+# DELETE /cart/items
+###
+@item = 461362
+DELETE  {{host}}/cart/items/{{item}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+# POST /cart/pre-checkout/tips
+###
+POST  {{host}}/cart/pre-checkout/tips
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "amount": 0
+}
+
+###
+# GET /cart/pre-checkout
+###
+GET  {{host}}/cart/pre-checkout
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+# DELETE /cart
+### 538627
+DELETE  {{host}}/cart
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+
+### units
+###
+### pza
+### grammage
+### granel (default 0.05 kg)
+#### Rebanada Delgada
+#### Rebanada Media
+#### Rebanada Gruesa
+#### Trozo
