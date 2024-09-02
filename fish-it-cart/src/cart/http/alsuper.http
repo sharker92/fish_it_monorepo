@@ -1,6 +1,6 @@
 @host = https://prod.alsuperapi.com
 # Local storage
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1NDM1MiwiZW1haWwiOiJzaGFya2VyOTJAaG90bWFpbC5jb20iLCJhdHRyaWJ1dGVzIjoiQW5kcmVzIE1vcmFsZXMgUmV5ZXMiLCJnZW5kZXIiOiJIIiwidHlwZSI6ImNsaWVudCIsImRhdGVfYmlydGgiOiIxOTkyLTA1LTExIiwibWVtYmVyc2hpcCI6IjAyMDk0NTk0NzA1NSIsImZpcmViYXNlX3Rva2VucyI6WyJmaDFDam9aU1EwNnJScDl0cElaM0RxOkFQQTkxYkVHQWZmcW5mTUVGX19jOGJPQ1R2enFQTHF5TFZfUG1HTWl4aUtvWkdWeGJyYjMwYWgxUnFzVzVpTFVHMHBkWGpJdEZwQ3I3Nlp0QjVMV3plUnFyNGlsTGJ2cGZrN2VXOHlkOENRUms5cHRQdllpUzJYMGtBejVPaTBab3NMWW5PSjVIVUlXIl0sImlhdCI6MTcxNTQ2NjM5M30.Kao3-uYfp6O1RBv44cFCT5eoYddG5QvFt-ehkYja2z8
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1NDM1MiwiZW1haWwiOiJzaGFya2VyOTJAaG90bWFpbC5jb20iLCJhdHRyaWJ1dGVzIjoiQW5kcmVzIE1vcmFsZXMgUmV5ZXMiLCJnZW5kZXIiOiJIIiwidHlwZSI6ImNsaWVudCIsImRhdGVfYmlydGgiOiIxOTkyLTA1LTExIiwibWVtYmVyc2hpcCI6IjAyMDk0NTk0NzA1NSIsImZpcmViYXNlX3Rva2VucyI6WyJmaDFDam9aU1EwNnJScDl0cElaM0RxOkFQQTkxYkVHQWZmcW5mTUVGX19jOGJPQ1R2enFQTHF5TFZfUG1HTWl4aUtvWkdWeGJyYjMwYWgxUnFzVzVpTFVHMHBkWGpJdEZwQ3I3Nlp0QjVMV3plUnFyNGlsTGJ2cGZrN2VXOHlkOENRUms5cHRQdllpUzJYMGtBejVPaTBab3NMWW5PSjVIVUlXIl0sImlhdCI6MTcyNTI0MDc2OX0.Me-uS9d9FeHc4fkioJuILd-6oyscFliYHa90jVzJj3c
 @refresh_token = "033c7ef2-7aa4-4ed3-80ff-1060d99004b3"
 @firebasetoken = fh1CjoZSQ06rRp9tpIZ3Dq:APA91bEGAffqnfMEF__c8bOCTvzqPLqyLV_PmGMixiKoZGVxbrb30ah1RqsW5iLUG0pdXjItFpCr76ZtB5LWzeRqr4ilLbvpfk7eW8yd8CQRk9ptPvYiS2X0kAz5Oi0ZosLYnOJ5HUIW
 ###
@@ -45,14 +45,12 @@ Authorization: Bearer {{token}}
 {
     "items": [
   {
-    "name": "Brisket",
-    "itemId": 14035,
-    "quantity": 4.5,
+    "name": "Citrato de MG",
+    "itemId": 457023,
+    "quantity": 1,
     "branch_id": 6,
     "unit": "pza",
-    "variant": null,
-    "comment": "1 kilo",
-    "unidad": "4.5 es la unidad por pieza calculada por alsuper"
+    "variant": null
   }
   
     ]
