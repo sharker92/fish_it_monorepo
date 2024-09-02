@@ -17,6 +17,6 @@ export class CartController {
   @UseInterceptors(FileInterceptor('file'))
   create(@Body() body: any, @UploadedFile() jsonFile: Express.Multer.File) {
     const jsonData = JSON.parse(jsonFile.buffer.toString());
-    return this.cartService.create(jsonData, jsonFile);
+    return this.cartService.create(jsonData);
   }
 }

@@ -8,41 +8,35 @@ const ALSUPER_TOKEN =
 @Injectable()
 export class CartService {
   constructor() {}
-  async create(jsonData: AlsuperItemType[], jsonFile) {
-    try {
-      // const userDataUrl = `${ALSUPER_API_URL}/users/user-data`;
-      // const res2 = await axios.get(userDataUrl, {
-      //   headers: {
-      //     Authorization: `Bearer ${ALSUPER_TOKEN}`,
-      //   },
-      // });
-      const loadItemsUrl = `${ALSUPER_API_URL}/cart/items`;
-      const res = await axios.post(
-        loadItemsUrl,
-        {
-          items: jsonData,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${ALSUPER_TOKEN}`,
-          },
-        },
-      );
-    } catch (error) {
-      console.error(error);
-    }
+  async create(jsonData: AlsuperItemType[]) {
+    const loadItemsUrl = `${ALSUPER_API_URL}/cart/items`;
+    const nonLoadedItems = [];
     for (const item of jsonData) {
       try {
         console.log(item);
-        const res = await axios.post(ALSUPER_API_URL, item, {
-          headers: {
-            Authorization: `Bearer ${ALSUPER_TOKEN}`,
+        const res = await axios.post(
+          loadItemsUrl,
+          { items: [item] },
+          {
+            headers: {
+              Authorization: `Bearer ${ALSUPER_TOKEN}`,
+            },
           },
-        });
+        );
+        console.log(res.data.message, String(item));
       } catch (error) {
+        nonLoadedItems.push({
+          ...item,
+          errorAlsuper: error?.response?.data?.data?.message,
+          error: error.message,
+        });
         console.error(error);
       }
     }
-    return 'This action adds a new cart';
+    const responseMessage = {
+      message: 'Tus productos han sido cargados al carrito',
+      productosNoCargados: nonLoadedItems,
+    };
+    return responseMessage;
   }
 }
