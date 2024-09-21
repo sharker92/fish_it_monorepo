@@ -19,3 +19,8 @@ Content-Type: application/json
 # Get
 ###
 GET {{host}}/cart
+
+###
+# Delete
+###
+DELETE {{host}}/cart

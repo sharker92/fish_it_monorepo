@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fiona Budget Configuration</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base target="_top" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <style>
+      .custom-num-inp-width {
+        width: 70px;
+        height: 24px;
+      }
+    </style>
+    <!-- <script src="https://kit.fontawesome.com/d7af7ef435.js" crossorigin="anonymous"></script> -->
+    <script>
+      // Prevent forms from submitting.
+      function preventFormSubmit() {
+        var forms = document.querySelectorAll('form');
+        for (const element of forms) {
+          element.addEventListener('submit', function (event) {
+            event.preventDefault();
+          });
+        }
+      }
+      window.addEventListener('load', preventFormSubmit);
+
+      function handleFormSubmit(formObject) {
+        document.getElementById('message').textContent = 'Submitting..';
+        document.getElementById('message').style.display = 'block';
+        document.getElementById('submit-button').disabled = true;
+        
+        google.script.run
+          .withSuccessHandler(() => {
+            // alert('Form submitted successfully');
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('message').style.backgroundColor = '#FF247B';
+            document.getElementById('message').style.color = '#FFF0F3';
+            document.getElementById('submit-button').disabled = false;
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);
+            form.reset();
+          })
+          .processForm(formObject);
+      }
+    </script>
+  </head>
+  <body>
+    <form id="form" class="m-4 pl-4" onsubmit="handleFormSubmit(this)">
+      <div class="field">
+        <h5 class="subtitle is-5 mb-0" style="color: #ff147b">Platforms:</h5>
+        <p class="help mb-2" style="color: #595959">
+          Select the platform you want to enable:
+        </p>
+        <div class="field">
+          <div class="control">
+            <label class="checkbox" for="ils">
+              <input type="checkbox" id="ils" name="ils" value="ils" checked />
+              ILS
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <label class="checkbox" for="search">
+              <input
+                type="checkbox"
+                id="search"
+                name="search"
+                value="search"
+                checked
+              />
+              Search
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <label class="checkbox" for="social">
+              <input
+                type="checkbox"
+                id="social"
+                name="social"
+                value="social"
+                checked
+              />
+              Social
+            </label>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="control">
+            <label class="checkbox mr-4" for="email">
+              <input
+                type="checkbox"
+                id="email"
+                name="email"
+                value="email"
+                checked
+              />
+              Email
+            </label>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <input
+                id="emailpkg1"
+                name="emailpkg1"
+                class="input is-small custom-num-inp-width"
+                type="number"
+                placeholder="750"
+                min="0"
+                max="5000"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <label class="checkbox" for="geofencing">
+              <input
+                type="checkbox"
+                id="geofencing"
+                name="geofencing"
+                value="geofencing"
+                checked
+              />
+              Geofencing
+            </label>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="control">
+            <label class="checkbox mr-4" for="seo">
+              <input type="checkbox" id="seo" name="seo" value="seo" checked />
+              SEO
+            </label>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <input
+                id="seopkg1"
+                name="seopkg1"
+                class="input is-small custom-num-inp-width"
+                type="number"
+                placeholder="450"
+                min="0"
+                max="5000"
+              />
+            </div>
+            <div class="control">
+              <input
+                id="seopkg2"
+                name="seopkg2"
+                class="input is-small custom-num-inp-width"
+                type="number"
+                placeholder="625"
+                min="0"
+                max="5000"
+              />
+            </div>
+            <div class="control">
+              <input
+                id="seopkg3"
+                name="seopkg3"
+                class="input is-small custom-num-inp-width"
+                type="number"
+                placeholder="850"
+                min="0"
+                max="5000"
+              />
+            </div>
+            <div class="control">
+              <input
+                id="seopkg4"
+                name="seopkg4"
+                class="input is-small custom-num-inp-width"
+                type="number"
+                placeholder="1200"
+                min="0"
+                max="5000"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <label class="checkbox" for="display">
+              <input
+                type="checkbox"
+                id="display"
+                name="display"
+                value="display"
+                checked
+              />
+              Display
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <label class="checkbox" for="native">
+              <input
+                type="checkbox"
+                id="native"
+                name="native"
+                value="native"
+                checked
+              />
+              Native
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <label class="checkbox" for="audio">
+              <input
+                type="checkbox"
+                id="audio"
+                name="audio"
+                value="audio"
+                checked
+              />
+              Audio
+            </label>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="control">
+            <label class="checkbox mr-4" for="os">
+              <input type="checkbox" id="os" name="os" value="os" checked />
+              Organic Social
+            </label>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <input
+                id="ospkg1"
+                name="ospkg1"
+                class="input is-small custom-num-inp-width"
+                type="number"
+                placeholder="338"
+                min="0"
+                max="5000"
+              />
+            </div>
+            <div class="control">
+              <input
+                id="ospkg2"
+                name="ospkg2"
+                class="input is-small custom-num-inp-width"
+                type="number"
+                placeholder="469"
+                min="0"
+                max="5000"
+              />
+            </div>
+            <div class="control">
+              <input
+                id="ospkg3"
+                name="ospkg3"
+                class="input is-small custom-num-inp-width"
+                type="number"
+                placeholder="638"
+                min="0"
+                max="5000"
+              />
+            </div>
+            <div class="control">
+              <input
+                id="ospkg4"
+                name="ospkg4"
+                class="input is-small custom-num-inp-width"
+                type="number"
+                placeholder="900"
+                min="0"
+                max="5000"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <h5 class="subtitle is-5 mb-0" style="color: #ff147b">
+          Priority / Situation Buckets:
+        </h5>
+        <p class="help mb-2" style="color: #595959">
+          Select the priority / situation bucket that best describes the request
+        </p>
+
+        <div class="field is-horizontal">
+          <div class="field-label has-text-left">
+            <label class="" for="cpl">Cost Per Lead:</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-narrow">
+              <div class="control">
+                <div class="select is-small">
+                  <select id="cpl" name="cpl">
+                    <option selected>Stabilized $35</option>
+                    <option>Medium Priority $38</option>
+                    <option>High Priority $40</option>
+                    <option>Lease Up $43</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <h5 class="subtitle is-5 mb-0" style="color: #ff147b">
+          Budget Request Time Periods:
+        </h5>
+        <p class="help mb-2" style="color: #595959">
+          Select the period in which you need the budgets
+        </p>
+
+        <div class="field is-horizontal">
+          <div class="field-label has-text-left">
+            <label class="" for="reqmo">Requiered Months:</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-narrow">
+              <div class="control">
+                <div class="select is-small">
+                  <select id="reqmo" name="reqmo">
+                    <option selected>12M</option>
+                    <option>6M</option>
+                    <option>3M</option>
+                    <option>1M</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label has-text-left">
+            <label class="" for="mofil">Month Filter:</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-narrow">
+              <div class="control">
+                <div class="select is-small">
+                  <select id="mofil" name="mofil">
+                    <option selected>Next Month</option>
+                    <option>Every Month</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <input type="month" /> -->
+      <!-- <input type="date" /> -->
+      <div class="field">
+        <h5 class="subtitle is-5 mb-0" style="color: #ff147b">
+          Good Better Best:
+        </h5>
+        <p class="help mb-2" style="color: #595959">
+          Good Better Best will take each request and compute three separate
+          budgets
+        </p>
+        <div class="field">
+          <div class="control">
+            <label class="checkbox" for="gbb">
+              <input type="checkbox" id="gbb" name="gbb" value="gbb" />
+              Good Better Best
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal" style="display: flex; align-items: center;">
+        <div class="control">
+          <button
+            class="button"
+            style="background-color: #6617a6; color: #ffffff; padding: 10px 20px; margin: 10px auto;"
+            type="submit"
+            id="submit-button"
+          >
+            Submit
+          </button>
+        </div>
+        <div
+          id="message"
+          style="
+            display: none;
+            margin: 20px;
+            font-weight: bold;
+            color: #FF247B;
+            padding: 8px;
+            background-color: #FFF0F3;
+            border-radius: 4px;
+            border-color: #400322;
+          "
+        ></div>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   Post,
   UploadedFile,
@@ -18,5 +19,15 @@ export class CartController {
   create(@Body() body: any, @UploadedFile() jsonFile: Express.Multer.File) {
     const jsonData = JSON.parse(jsonFile.buffer.toString());
     return this.cartService.create(jsonData);
+  }
+
+  @Get()
+  get() {
+    return this.cartService.get();
+  }
+
+  @Delete()
+  delete() {
+    return this.cartService.delete();
   }
 }

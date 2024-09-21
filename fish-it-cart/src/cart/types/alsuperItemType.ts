@@ -6,5 +6,5 @@ export type AlsuperItemType = {
   unit: string;
   variant?: string;
   comment?: string;
-  unidad?: string;
+  unidad?: number; // Es la unidad por pieza calculada por alsuper
 };

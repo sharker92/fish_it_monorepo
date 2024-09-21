@@ -1,19 +1,68 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { AlsuperItemType } from './types/alsuperItemType';
 import axios from 'axios';
 
 const ALSUPER_API_URL = 'https://prod.alsuperapi.com';
+const ALSUPER_URL = 'https://alsuper.com';
 const ALSUPER_TOKEN =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1NDM1MiwiZW1haWwiOiJzaGFya2VyOTJAaG90bWFpbC5jb20iLCJhdHRyaWJ1dGVzIjoiQW5kcmVzIE1vcmFsZXMgUmV5ZXMiLCJnZW5kZXIiOiJIIiwidHlwZSI6ImNsaWVudCIsImRhdGVfYmlydGgiOiIxOTkyLTA1LTExIiwibWVtYmVyc2hpcCI6IjAyMDk0NTk0NzA1NSIsImZpcmViYXNlX3Rva2VucyI6WyJmaDFDam9aU1EwNnJScDl0cElaM0RxOkFQQTkxYkVHQWZmcW5mTUVGX19jOGJPQ1R2enFQTHF5TFZfUG1HTWl4aUtvWkdWeGJyYjMwYWgxUnFzVzVpTFVHMHBkWGpJdEZwQ3I3Nlp0QjVMV3plUnFyNGlsTGJ2cGZrN2VXOHlkOENRUms5cHRQdllpUzJYMGtBejVPaTBab3NMWW5PSjVIVUlXIl0sImlhdCI6MTcyNTI0MDc2OX0.Me-uS9d9FeHc4fkioJuILd-6oyscFliYHa90jVzJj3c';
 @Injectable()
 export class CartService {
+  private readonly logger = new Logger(CartService.name);
   constructor() {}
+
+  // open web browser to alsuper.com
   async create(jsonData: AlsuperItemType[]) {
+    const loadedItemsResponse = await this.loadItemsInCart(jsonData);
+    const loadedAndCommentedItemsResponse =
+      await this.addCommentsToItems(loadedItemsResponse);
+    return loadedAndCommentedItemsResponse;
+  }
+  private async addCommentsToItems(loadedItems: any) {
+    const commentItemsUrl = `${ALSUPER_API_URL}/cart/items/comments`;
+    const commentedItems = [];
+    const nonCommentedItems = [];
+    const commentedItemsWithPossibleError = [];
+    const itemsWithComments = loadedItems.productosCargados.filter(
+      (item) => item?.comment,
+    );
+    for (const item of itemsWithComments) {
+      try {
+        const res = await axios.put(commentItemsUrl, item, {
+          headers: {
+            Authorization: `Bearer ${ALSUPER_TOKEN}`,
+          },
+        });
+        if (res?.data?.data?.message === 'Comentario agregado correctamente') {
+          commentedItems.push(item);
+          this.logger.log(res?.data?.data?.message, item);
+        } else {
+          commentedItemsWithPossibleError.push(item);
+        }
+      } catch (error) {
+        nonCommentedItems.push({
+          ...item,
+          errorAlsuper: error?.response?.data?.data?.message,
+          error: error.message,
+        });
+        this.logger.error(error);
+      }
+    }
+    const responseMessage = {
+      ...loadedItems,
+      productosComentados: commentedItems,
+      productosNoComentados: nonCommentedItems,
+      productosComentadosConPossibleError: commentedItemsWithPossibleError,
+    };
+    return responseMessage;
+  }
+  private async loadItemsInCart(jsonData: AlsuperItemType[]) {
     const loadItemsUrl = `${ALSUPER_API_URL}/cart/items`;
     const nonLoadedItems = [];
+    const loadedItems = [];
+    const loadedItemsWithPossibleError = [];
     for (const item of jsonData) {
       try {
-        console.log(item);
         const res = await axios.post(
           loadItemsUrl,
           { items: [item] },
@@ -23,20 +72,62 @@ export class CartService {
             },
           },
         );
-        console.log(res.data.message, String(item));
+        const itemAdded = res?.data?.data?.items[0];
+        if (itemAdded) {
+          loadedItems.push({ ...itemAdded, ...item });
+          this.logger.log(res?.data?.data?.message, res?.data?.data?.items[0]);
+        } else {
+          loadedItemsWithPossibleError.push({ ...item });
+        }
       } catch (error) {
         nonLoadedItems.push({
           ...item,
           errorAlsuper: error?.response?.data?.data?.message,
           error: error.message,
         });
-        console.error(error);
+        this.logger.error(error);
       }
     }
     const responseMessage = {
       message: 'Tus productos han sido cargados al carrito',
+      numProductosNoCargados: nonLoadedItems.length,
       productosNoCargados: nonLoadedItems,
+      numProductosCargadosConPossibleError: loadedItemsWithPossibleError.length,
+      productosCargadosConPossibleError: loadedItemsWithPossibleError,
+      numProductosCargados: loadedItems.length,
+      productosCargados: loadedItems,
     };
     return responseMessage;
+  }
+  // add the verify not sure if also when creating the cart
+  // https://alsuper.com/carrito
+  // /cart/verify-cart
+  async get() {
+    const getCartUrl = `${ALSUPER_API_URL}/cart`;
+    try {
+      const res = await axios.get(getCartUrl, {
+        headers: {
+          Authorization: `Bearer ${ALSUPER_TOKEN}`,
+        },
+      });
+      const cartData = res?.data?.data;
+      return cartData;
+    } catch (error) {
+      this.logger.error(error);
+    }
+  }
+  // finish implementation
+  async delete() {
+    const deleteItemsUrl = `${ALSUPER_API_URL}/cart/items`;
+    try {
+      const res = await axios.delete(deleteItemsUrl, {
+        headers: {
+          Authorization: `Bearer ${ALSUPER_TOKEN}`,
+        },
+      });
+      const itemAdded = res?.data?.data?.items[0];
+    } catch (error) {
+      this.logger.error(error);
+    }
   }
 }
