@@ -1,7 +1,7 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, Logger } from '@nestjs/common';
 import { AlsuperItemType } from './types/alsuperItemType';
 import axios from 'axios';
-
+import open from 'open';
 const ALSUPER_API_URL = 'https://prod.alsuperapi.com';
 const ALSUPER_URL = 'https://alsuper.com';
 const ALSUPER_TOKEN =
@@ -13,6 +13,7 @@ export class CartService {
 
   // open web browser to alsuper.com
   async create(jsonData: AlsuperItemType[]) {
+    const x = open('https://alsuper.com/carrito');
     const loadedItemsResponse = await this.loadItemsInCart(jsonData);
     const loadedAndCommentedItemsResponse =
       await this.addCommentsToItems(loadedItemsResponse);
@@ -33,7 +34,7 @@ export class CartService {
             Authorization: `Bearer ${ALSUPER_TOKEN}`,
           },
         });
-        if (res?.data?.data?.message === 'Comentario agregado correctamente') {
+        if (res?.data?.data?.message === 'Se ha agregado un comentario') {
           commentedItems.push(item);
           this.logger.log(res?.data?.data?.message, item);
         } else {
@@ -116,18 +117,23 @@ export class CartService {
       this.logger.error(error);
     }
   }
-  // finish implementation
+
   async delete() {
-    const deleteItemsUrl = `${ALSUPER_API_URL}/cart/items`;
+    const deleteItemsUrl = `${ALSUPER_API_URL}/cart`;
     try {
       const res = await axios.delete(deleteItemsUrl, {
         headers: {
           Authorization: `Bearer ${ALSUPER_TOKEN}`,
         },
       });
-      const itemAdded = res?.data?.data?.items[0];
+      const responseMessage = res?.data?.data?.message;
+      if (responseMessage !== 'Cart 579207 is now empty.') {
+        this.logger.warn(`Response message isn't the expected`);
+      }
+      return responseMessage;
     } catch (error) {
       this.logger.error(error);
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 }
