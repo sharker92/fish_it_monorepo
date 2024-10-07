@@ -10,9 +10,7 @@ export class CartService {
   private readonly logger = new Logger(CartService.name);
   constructor() {}
 
-  // open web browser to alsuper.com
   async create(jsonData: AlsuperItemType[]) {
-    // const x = open('https://alsuper.com/carrito');
     const loadedItemsResponse = await this.loadItemsInCart(jsonData);
     const loadedAndCommentedItemsResponse =
       await this.addCommentsToItems(loadedItemsResponse);
@@ -90,6 +88,7 @@ export class CartService {
     }
     const responseMessage = {
       message: 'Tus productos han sido cargados al carrito',
+      cart: 'https://alsuper.com/carrito',
       numProductosNoCargados: nonLoadedItems.length,
       productosNoCargados: nonLoadedItems,
       numProductosCargadosConPossibleError: loadedItemsWithPossibleError.length,
