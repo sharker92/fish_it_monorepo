@@ -2,6 +2,7 @@ import { HttpException, HttpStatus, Injectable, Logger } from '@nestjs/common';
 import { AlsuperItemType } from './types/alsuperItemType';
 import axios from 'axios';
 const ALSUPER_API_URL = 'https://prod.alsuperapi.com';
+const ALSUPER_CART_URL = 'https://alsuper.com/carrito';
 const ALSUPER_URL = 'https://alsuper.com';
 const ALSUPER_TOKEN =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1NDM1MiwiZW1haWwiOiJzaGFya2VyOTJAaG90bWFpbC5jb20iLCJhdHRyaWJ1dGVzIjoiQW5kcmVzIE1vcmFsZXMgUmV5ZXMiLCJnZW5kZXIiOiJIIiwidHlwZSI6ImNsaWVudCIsImRhdGVfYmlydGgiOiIxOTkyLTA1LTExIiwibWVtYmVyc2hpcCI6IjAyMDk0NTk0NzA1NSIsImZpcmViYXNlX3Rva2VucyI6WyJmaDFDam9aU1EwNnJScDl0cElaM0RxOkFQQTkxYkVHQWZmcW5mTUVGX19jOGJPQ1R2enFQTHF5TFZfUG1HTWl4aUtvWkdWeGJyYjMwYWgxUnFzVzVpTFVHMHBkWGpJdEZwQ3I3Nlp0QjVMV3plUnFyNGlsTGJ2cGZrN2VXOHlkOENRUms5cHRQdllpUzJYMGtBejVPaTBab3NMWW5PSjVIVUlXIl0sImlhdCI6MTcyNTI0MDc2OX0.Me-uS9d9FeHc4fkioJuILd-6oyscFliYHa90jVzJj3c';
@@ -88,7 +89,7 @@ export class CartService {
     }
     const responseMessage = {
       message: 'Tus productos han sido cargados al carrito',
-      cart: 'https://alsuper.com/carrito',
+      cart: ALSUPER_CART_URL,
       numProductosNoCargados: nonLoadedItems.length,
       productosNoCargados: nonLoadedItems,
       numProductosCargadosConPossibleError: loadedItemsWithPossibleError.length,
