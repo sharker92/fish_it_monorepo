@@ -1,7 +1,6 @@
 import { HttpException, HttpStatus, Injectable, Logger } from '@nestjs/common';
 import { AlsuperItemType } from './types/alsuperItemType';
 import axios from 'axios';
-import open from 'open';
 const ALSUPER_API_URL = 'https://prod.alsuperapi.com';
 const ALSUPER_URL = 'https://alsuper.com';
 const ALSUPER_TOKEN =
@@ -13,7 +12,7 @@ export class CartService {
 
   // open web browser to alsuper.com
   async create(jsonData: AlsuperItemType[]) {
-    const x = open('https://alsuper.com/carrito');
+    // const x = open('https://alsuper.com/carrito');
     const loadedItemsResponse = await this.loadItemsInCart(jsonData);
     const loadedAndCommentedItemsResponse =
       await this.addCommentsToItems(loadedItemsResponse);
