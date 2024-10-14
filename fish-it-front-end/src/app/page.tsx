@@ -1,21 +1,32 @@
 'use client';
+
+import { useState } from 'react';
+
 export default function Home() {
   function ListItemDetail({ id }) {
-    return <li>{id}</li>;
+    return <li key={id}>{id}</li>;
   }
-  function ListItems() {
-    const inst = [1, 2, 3];
+  function ListItems({ ints, addValue }) {
+    const increment = 3;
     return (
       <>
-        {inst.map((id) => {
+        <button onClick={() => addValue(increment)}>Add Item</button>
+        {ints.map((id) => {
           return <ListItemDetail id={id} />;
         })}
       </>
     );
   }
+
+  const [ints, setInts] = useState([1, 2, 3]);
+  function addValue(incrementValue: number) {
+    const newVal = Math.max(...ints) + incrementValue;
+    setInts([...ints, newVal]);
+  }
+
   return (
     <ul>
-      <ListItems />
+      <ListItems ints={ints} addValue={addValue} />
     </ul>
   );
 }
