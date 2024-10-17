@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import TodoItems from "./TodoItems";
 import AddForm from "./AddForm";
+import list from "./list.json"
 
 export default function App() {
-  const [toDoList, setToDoList] = useState([
-    { text: "Buy Sugar", id: 1656632538430 },
-    { text: "Eat Carrots", id: 1656632478827 },
-  ]);
 
-  function deleteItem(id) {
+  const [toDoList, setToDoList] = useState(list);
+
+  function deleteItem(id: number) {
     setToDoList((toDoList) => toDoList.filter((rec) => id !== rec.id));
   }
 
-  const addTask = (userInput) => {
+  const addTask = (userInput: string) => {
     const newValue = { text: userInput, id: Date.now() };
     setToDoList((toDoList) => [newValue, ...toDoList]);
   };

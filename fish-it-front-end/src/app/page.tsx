@@ -8,3 +8,4 @@ export default function Home() {
     <App />
   )
 }
+//https://github.com/pkellner/pluralsight-what-is-react/tree/main/m2-introduction-to-react/clips-all/App
