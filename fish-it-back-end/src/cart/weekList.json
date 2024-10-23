@@ -1,0 +1,383 @@
+[
+  {
+    "name": "Espinaca",
+    "itemId": 111,
+    "quantity": 2,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Kale",
+    "itemId": 186,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Acelgas",
+    "itemId": 110,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Pepino",
+    "itemId": 12,
+    "quantity": 2.4,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "unidad": 0.4
+  },
+  {
+    "name": "Perejil",
+    "itemId": 108,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Apio",
+    "itemId": 67,
+    "quantity": 0.15,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "comment": "7 ramitas verdes",
+    "unidad": 0.15
+  },
+  {
+    "name": "Nopal",
+    "itemId": 239,
+    "quantity": 0.84,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "unidad": 0.12
+  },
+  {
+    "name": "Limón agrio sin semilla",
+    "itemId": 132,
+    "quantity": 3,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "unidad": 0.2
+  },
+  {
+    "name": "Piña",
+    "itemId": 881,
+    "quantity": 1.9,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "unidad": 1.9
+  },
+  {
+    "name": "Zanahoria",
+    "itemId": 11,
+    "quantity": 2.4,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "unidad": 0.16
+  },
+  {
+    "name": "Plátanos",
+    "itemId": 1,
+    "quantity": 1.38,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "unidad": 0.23
+  },
+  {
+    "name": "Tomate uva",
+    "itemId": 715,
+    "quantity": 2,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Lechuga Orejona",
+    "itemId": 112,
+    "quantity": 4,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Champiñones",
+    "itemId": 217,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Cebolla de rabo",
+    "itemId": 103,
+    "quantity": 2,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Queso 500 gr",
+    "itemId": 391238,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "comment": "medio kilo rebanado"
+  },
+  {
+    "name": "Queso crema",
+    "itemId": 442495,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Chorizo",
+    "itemId": 319544,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Tocino",
+    "itemId": 461362,
+    "quantity": 0.25,
+    "branch_id": 6,
+    "unit": "granel",
+    "variant": "Rebanada Delgada"
+  },
+  {
+    "name": "Jabón Zote",
+    "itemId": 373277,
+    "quantity": 2,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Crema para peinar",
+    "itemId": 452210,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Shampoo del oso",
+    "itemId": 446770,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Shampoo solido",
+    "itemId": 437743,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Crema para el cuerpo grande",
+    "itemId": 394449,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Gel para el cabello",
+    "itemId": 404315,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Mole",
+    "itemId": 9993,
+    "quantity": 2,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Citrato de MG",
+    "itemId": 457023,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Citrato de Potasio",
+    "itemId": 457026,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Papel de arroz",
+    "itemId": 455022,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Cepillo de Dientes",
+    "itemId": 303243,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Curcuma",
+    "itemId": 1152,
+    "quantity": 0.3,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "unidad": 0.1
+  },
+  {
+    "name": "Gengibre",
+    "itemId": 189,
+    "quantity": 0.05,
+    "branch_id": 6,
+    "unit": "granel",
+    "variant": null,
+    "comment": "1 pieza"
+  },
+  {
+    "name": "Blanqueador Dr. Beckmann",
+    "itemId": 411848,
+    "quantity": 2,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Servilletas para cocina",
+    "itemId": 432047,
+    "quantity": 2,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Salsa soya",
+    "itemId": 454541,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Salsa inglesa",
+    "itemId": 425013,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Zaatar",
+    "itemId": 411489,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Especias italianas mezcla",
+    "itemId": 456622,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Salchicha polaca",
+    "itemId": 426697,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Pan para hot dogs",
+    "itemId": 408503,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Pan para hamburguesa",
+    "itemId": 28465,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Pepinillos",
+    "itemId": 405900,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Crema ácida",
+    "itemId": 438556,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Jabón en polvo",
+    "itemId": 466258,
+    "quantity": 1,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null
+  },
+  {
+    "name": "Brisket",
+    "itemId": 14035,
+    "quantity": 4.5,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "comment": "1 kilo",
+    "unidad": 4.5
+  },
+  {
+    "name": "Carne molida",
+    "itemId": 305481,
+    "quantity": 0.5,
+    "branch_id": 6,
+    "unit": "granel",
+    "variant": null
+  }
+]

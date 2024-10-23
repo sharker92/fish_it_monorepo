@@ -1,19 +1,20 @@
 import React from 'react';
+import { AlsuperItemType } from '../lib/types/alsuperItemType';
 
-export default function TodoItems({ entries, deleteItem }) {
+export default function TodoItems({ entries, deleteItem }: {entries: AlsuperItemType[], deleteItem: (itemId: number) => void}) {
   return (
     <ul className="mt-3">
       <b className="ms-3">Items:</b>
-      {entries.map(({ id, text }: { id: number; text: string }) => {
+      {entries.map(({ itemId, name }: { itemId: number; name: string }) => {
         return (
           <li
             className="px-2 mt-1 mb-1 ms-2"
-            key={id}
+            key={itemId}
             onClick={() => {
-              deleteItem(id);
+              deleteItem(itemId);
             }}
           >
-            {text}
+            {name}
           </li>
         );
       })}
