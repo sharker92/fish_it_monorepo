@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export function FormInputField(props) {
+export function FormInputField(props: any) {
   return (
     <input
       className="px-2 mt-2 mb-2 ms-1"
