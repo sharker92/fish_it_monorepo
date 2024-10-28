@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlsuperItemType } from '../lib/types/alsuperItemType';
+import { AlsuperItemType } from '../app/lib/types/alsuperItemType';
 
 export default function TodoItems({ entries, deleteItem }: {entries: AlsuperItemType[], deleteItem: (itemId: number) => void}) {
   return (

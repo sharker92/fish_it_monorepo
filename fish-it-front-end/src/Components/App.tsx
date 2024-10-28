@@ -3,7 +3,7 @@ import TodoItems from './TodoItems';
 import AddForm from './AddForm';
 // import list from "./list.json"
 import list from './monthList.json';
-import { AlsuperItemType } from '../lib/types/alsuperItemType';
+import { AlsuperItemType } from '../app/lib/types/alsuperItemType';
 
 export default function App() {
   const [toDoList, setToDoList] = useState<AlsuperItemType[]>(list);
