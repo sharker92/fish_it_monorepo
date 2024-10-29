@@ -69,15 +69,6 @@
     "unidad": 0.2
   },
   {
-    "name": "Piña",
-    "itemId": 881,
-    "quantity": 1.9,
-    "branch_id": 6,
-    "unit": "pza",
-    "variant": null,
-    "unidad": 1.9
-  },
-  {
     "name": "Zanahoria",
     "itemId": 11,
     "quantity": 2.4,
@@ -123,23 +114,6 @@
     "name": "Cebolla de rabo",
     "itemId": 103,
     "quantity": 2,
-    "branch_id": 6,
-    "unit": "pza",
-    "variant": null
-  },
-  {
-    "name": "Queso 500 gr",
-    "itemId": 391238,
-    "quantity": 1,
-    "branch_id": 6,
-    "unit": "pza",
-    "variant": null,
-    "comment": "medio kilo rebanado"
-  },
-  {
-    "name": "Queso crema",
-    "itemId": 442495,
-    "quantity": 1,
     "branch_id": 6,
     "unit": "pza",
     "variant": null
@@ -379,5 +353,14 @@
     "branch_id": 6,
     "unit": "granel",
     "variant": null
-  }
+  },
+  {
+    "name": "Piña",
+    "itemId": 881,
+    "quantity": 1.9,
+    "branch_id": 6,
+    "unit": "pza",
+    "variant": null,
+    "unidad": 1.9
+  },
 ]
