@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function FormInputField(props: any) {
+export function FormInputField({userInput, onChange}: any) {
   return (
     <div>
       <div>
@@ -8,8 +8,8 @@ export function FormInputField(props: any) {
         <input
           type="text"
           name="name"
-          value={props.name}
-          onChange={props.onChange}
+          value={userInput.name}
+          onChange={onChange}
           placeholder="Enter new task"
         />
       </div>
@@ -18,8 +18,8 @@ export function FormInputField(props: any) {
         <input
           type="number"
           name="itemId"
-          value={props.itemId}
-          onChange={props.onChange}
+          value={userInput.itemId}
+          onChange={onChange}
           placeholder="Enter new task"
         />
       </div>
@@ -28,8 +28,8 @@ export function FormInputField(props: any) {
         <input
           type="number"
           name="quantity"
-          value={props.quantity}
-          onChange={props.onChange}
+          value={userInput.quantity}
+          onChange={onChange}
           placeholder="Enter new task"
         />
       </div>
@@ -38,8 +38,8 @@ export function FormInputField(props: any) {
         <input
           type="number"
           name="branch_id"
-          value={props.branch_id}
-          onChange={props.onChange}
+          value={userInput.branch_id}
+          onChange={onChange}
           placeholder="Enter new task"
         />
       </div>
@@ -48,8 +48,8 @@ export function FormInputField(props: any) {
         <input
           type="text"
           name="unit"
-          value={props.unit}
-          onChange={props.onChange}
+          value={userInput.unit}
+          onChange={onChange}
           placeholder="Enter new task"
         />
       </div>
@@ -58,8 +58,8 @@ export function FormInputField(props: any) {
         <input
           type="text"
           name="variant"
-          value={props.variant}
-          onChange={props.onChange}
+          value={userInput.variant}
+          onChange={onChange}
           placeholder="Enter new task"
         />
       </div>
@@ -68,8 +68,8 @@ export function FormInputField(props: any) {
         <input
           type="text"
           name="comment"
-          value={props.comment}
-          onChange={props.onChange}
+          value={userInput.comment}
+          onChange={onChange}
           placeholder="Enter new task"
         />
       </div>
@@ -78,17 +78,17 @@ export function FormInputField(props: any) {
         <input
           type="number"
           name="unidad"
-          value={props.unidad}
-          onChange={props.onChange}
+          value={userInput.unidad}
+          onChange={onChange}
           placeholder="Es la unidad por pieza calculada por alsuper"
         />
       </div>
     </div>
     // <input
     //   className="px-2 mt-2 mb-2 ms-1"
-    //   value={props.value}
+    //   value={value}
     //   type="text"
-    //   onChange={props.onChange}
+    //   onChange={onChange}
     //   placeholder="Enter new task"
     // />
   );

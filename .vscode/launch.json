@@ -5,17 +5,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug cart",
-      "type": "node",
+      "type": "msedge",
       "request": "launch",
-      "cwd": "${workspaceFolder}/fish-it-cart",
-      "console": "integratedTerminal",
-      "runtimeVersion": "18.16.1",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "start:debug"],
-      "skipFiles": ["<node_internals>/**"],
-      "timeout": 15000
-    },
-    
+      "name": "Launch Edge against localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    }
   ]
 }

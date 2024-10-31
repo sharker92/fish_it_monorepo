@@ -6,13 +6,13 @@ import list from './monthList.json';
 import { AlsuperItemType } from '../lib/types/alsuperItemType';
 
 export default function App() {
-  const [toDoList, setToDoList] = useState<AlsuperItemType[]>(list);
+  const [itemList, setItemList] = useState<AlsuperItemType[]>(list);
 
   function deleteItem(itemId: number) {
-    setToDoList((toDoList) => toDoList.filter((rec) => itemId !== rec.itemId));
+    setItemList((itemList) => itemList.filter((rec) => itemId !== rec.itemId));
   }
 
-  const addTask = (userInput: string) => {
+  const addItem = (userInput: string) => {
     const newValue = {
       name: userInput,
       itemId: Date.now(),
@@ -21,17 +21,17 @@ export default function App() {
       unit: 'pza',
       variant: null,
       comment: '',
-    };
-    setToDoList((toDoList) => [newValue, ...toDoList]);
+    }; //! this isn't working we need to take an object and assign it to the newValue variable
+    setItemList((itemList) => [newValue, ...itemList]);
   };
 
   return (
     <div className="container">
       <div className="row mb-1 ms-1 me-1 mt-2">
-        <AddForm addTask={addTask}></AddForm>
+        <AddForm addItem={addItem}></AddForm>
       </div>
       <div className="row mb-3 ms-1 me-1 mt-3">
-        <TodoItems entries={toDoList} deleteItem={deleteItem} />
+        <TodoItems entries={itemList} deleteItem={deleteItem} />
       </div>
     </div>
   );
