@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import TodoItems from './TodoItems';
+
 import AddForm from './AddForm';
 // import list from "./list.json"
 import list from './monthList.json';
 import { AlsuperItemType } from '../lib/types/alsuperItemType';
+import ItemsList from './ItemsList';
 
 export default function App() {
   const [itemList, setItemList] = useState<AlsuperItemType[]>(list);
@@ -31,7 +32,7 @@ export default function App() {
         <AddForm addItem={addItem}></AddForm>
       </div>
       <div className="row mb-3 ms-1 me-1 mt-3">
-        <TodoItems entries={itemList} deleteItem={deleteItem} />
+        <ItemsList entries={itemList} deleteItem={deleteItem} />
       </div>
     </div>
   );
