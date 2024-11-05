@@ -11,35 +11,28 @@ const AddForm = ({ addItem }: { addItem: any }) => {
     quantity: 0,
     branch_id: 6,
     unit: '',
-    variant: '', //
+    variant: '', // optional
     comment: '', //
-    unidad: 0,  //
+    unidad: 0, //
   };
   const [formData, setFormData] = useState(EMPTY_CART_ITEM);
 
   const handleChange = (e: any) => {
-    console.log('userInputHC1', formData)
-    console.log(e)
-    console.log(e.target)
-    setFormData(e.currentTarget.value);
     const { name, value } = e.target;
-    console.log('-----')
-    setFormData(name);
-    console.log('-----')
-    setFormData(value);
-    console.log('userInputHC2', formData)
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
+    console.log('userInputHC2', formData);
   };
 
   const handleSubmit = (e: any) => {
-    console.log('AHA!')
+    console.log('AHA!');
     e.preventDefault();
-    if (true) { //todo protect addItem if it doesn't have all required elements
-      console.log('AHA!2')
-      console.log(formData)
+    if (true) {
+      //todo protect addItem if it doesn't have all required elements
+      console.log('AHA!2');
+      console.log(formData);
       addItem(formData);
     }
     setFormData(EMPTY_CART_ITEM);

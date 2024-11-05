@@ -1,11 +1,12 @@
 import React from 'react';
 
-export function FormInputField({userInput, onChange}: any) {
+export function FormInputField({ userInput, onChange }: any) {
   return (
     <div>
       <div>
-        <label>Name:</label>
+        <label htmlFor="name">Name:</label>
         <input
+          id="name"
           type="text"
           name="name"
           value={userInput.name}
@@ -14,8 +15,9 @@ export function FormInputField({userInput, onChange}: any) {
         />
       </div>
       <div>
-        <label>Item ID:</label>
+        <label htmlFor="itemId">Item ID:</label>
         <input
+          id="itemId"
           type="number"
           name="itemId"
           value={userInput.itemId}
@@ -24,8 +26,9 @@ export function FormInputField({userInput, onChange}: any) {
         />
       </div>
       <div>
-        <label>Quantity:</label>
+        <label htmlFor="quantity">Quantity:</label>
         <input
+          id="quantity"
           type="number"
           name="quantity"
           value={userInput.quantity}
@@ -34,8 +37,9 @@ export function FormInputField({userInput, onChange}: any) {
         />
       </div>
       <div>
-        <label>Branch ID:</label>
+        <label htmlFor="branch_id">Branch ID:</label>
         <input
+          id="branch_id"
           type="number"
           name="branch_id"
           value={userInput.branch_id}
@@ -44,8 +48,9 @@ export function FormInputField({userInput, onChange}: any) {
         />
       </div>
       <div>
-        <label>Unit:</label>
+        <label htmlFor="unit">Unit:</label>
         <input
+          id="unit"
           type="text"
           name="unit"
           value={userInput.unit}
@@ -54,8 +59,9 @@ export function FormInputField({userInput, onChange}: any) {
         />
       </div>
       <div>
-        <label>Variant:</label>
+        <label htmlFor="variant">Variant:</label>
         <input
+          id="variant"
           type="text"
           name="variant"
           value={userInput.variant}
@@ -64,8 +70,9 @@ export function FormInputField({userInput, onChange}: any) {
         />
       </div>
       <div>
-        <label>Comment:</label>
+        <label htmlFor="comment">Comment:</label>
         <input
+          id="comment"
           type="text"
           name="comment"
           value={userInput.comment}
@@ -74,8 +81,9 @@ export function FormInputField({userInput, onChange}: any) {
         />
       </div>
       <div>
-        <label>Unidad:</label>
+        <label htmlFor="unidad">Unidad:</label>
         <input
+          id="unidad"
           type="number"
           name="unidad"
           value={userInput.unidad}

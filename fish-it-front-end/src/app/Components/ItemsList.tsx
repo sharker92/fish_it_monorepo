@@ -1,5 +1,6 @@
 import React from 'react';
 import { AlsuperItemType } from '../lib/types/alsuperItemType';
+import styles from './ItemList.module.css';
 
 export default function ItemsList({
   entries,
@@ -22,15 +23,15 @@ export default function ItemsList({
           comment,
         }: AlsuperItemType) => {
           return (
-            <li
-              className="px-2 mt-1 mb-1 ms-2"
+            <button
+              className={`${styles.btn} ${styles['btn-blue']}`}// seguir con los estilos de tailwind y modulos 🤩
               key={itemId}
               onClick={() => {
                 deleteItem(itemId);
               }}
             >
               {name + quantity + branch_id + unit + variant + comment}
-            </li>
+            </button>
           );
         },
       )}
