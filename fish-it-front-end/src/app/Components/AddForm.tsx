@@ -42,7 +42,7 @@ const AddForm = ({ addItem }: { addItem: any }) => {
     <form onSubmit={handleSubmit}>
       <div className="row">
         <div className="col-7">
-          <FormInputField userInput={formData} onChange={handleChange} />
+          <FormInputField formData={formData} onChange={handleChange} />
           {/* <FormInputField2 value={formData} onChange={handleChange} /> */}
         </div>
 
