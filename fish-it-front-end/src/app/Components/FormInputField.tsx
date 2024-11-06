@@ -1,15 +1,46 @@
 import React from 'react';
 
-export function FormInputField({ userInput, onChange }: any) {
+export function FormInputField({ formData, onChange }: any) {
+  const formDataMetaData = [
+    { id: 'name', type: 'text', placeholder: 'Enter new task' },
+    { id: 'itemId', type: 'number', placeholder: 'Enter new task' },
+    { id: 'quantity', type: 'number', placeholder: 'Enter new task' },
+    { id: 'branch_id', type: 'number', placeholder: 'Enter new task' },
+    { id: 'unit', type: 'text', placeholder: 'Enter new task' },
+    { id: 'variant', type: 'text', placeholder: 'Enter new task' },
+    { id: 'comment', type: 'text', placeholder: 'Enter new task' },
+    {
+      id: 'unidad',
+      type: 'number',
+      placeholder: 'Es la unidad por pieza calculada por alsuper',
+    },
+  ];
   return (
-    <div>
-      <div>
+    <>
+      {formDataMetaData.map((metaData) => (
+        <div>
+          <label htmlFor={metaData.id}>
+            {capitalizeFirstLetter(metaData.id)}:
+          </label>
+          <input
+            key={metaData.id}
+            id={metaData.id}
+            type={metaData.type}
+            name={metaData.id}
+            value={formData[metaData.id]}
+            onChange={onChange}
+            placeholder={metaData.placeholder}
+          />
+        </div>
+      ))}
+
+      {/* <div>
         <label htmlFor="name">Name:</label>
         <input
           id="name"
           type="text"
           name="name"
-          value={userInput.name}
+          value={formData.name}
           onChange={onChange}
           placeholder="Enter new task"
         />
@@ -20,7 +51,7 @@ export function FormInputField({ userInput, onChange }: any) {
           id="itemId"
           type="number"
           name="itemId"
-          value={userInput.itemId}
+          value={formData.itemId}
           onChange={onChange}
           placeholder="Enter new task"
         />
@@ -31,7 +62,7 @@ export function FormInputField({ userInput, onChange }: any) {
           id="quantity"
           type="number"
           name="quantity"
-          value={userInput.quantity}
+          value={formData.quantity}
           onChange={onChange}
           placeholder="Enter new task"
         />
@@ -42,7 +73,7 @@ export function FormInputField({ userInput, onChange }: any) {
           id="branch_id"
           type="number"
           name="branch_id"
-          value={userInput.branch_id}
+          value={formData.branch_id}
           onChange={onChange}
           placeholder="Enter new task"
         />
@@ -53,7 +84,7 @@ export function FormInputField({ userInput, onChange }: any) {
           id="unit"
           type="text"
           name="unit"
-          value={userInput.unit}
+          value={formData.unit}
           onChange={onChange}
           placeholder="Enter new task"
         />
@@ -64,7 +95,7 @@ export function FormInputField({ userInput, onChange }: any) {
           id="variant"
           type="text"
           name="variant"
-          value={userInput.variant}
+          value={formData.variant}
           onChange={onChange}
           placeholder="Enter new task"
         />
@@ -75,7 +106,7 @@ export function FormInputField({ userInput, onChange }: any) {
           id="comment"
           type="text"
           name="comment"
-          value={userInput.comment}
+          value={formData.comment}
           onChange={onChange}
           placeholder="Enter new task"
         />
@@ -86,12 +117,12 @@ export function FormInputField({ userInput, onChange }: any) {
           id="unidad"
           type="number"
           name="unidad"
-          value={userInput.unidad}
+          value={formData.unidad}
           onChange={onChange}
           placeholder="Es la unidad por pieza calculada por alsuper"
         />
-      </div>
-    </div>
+      </div> */}
+    </>
     // <input
     //   className="px-2 mt-2 mb-2 ms-1"
     //   value={value}
@@ -100,4 +131,8 @@ export function FormInputField({ userInput, onChange }: any) {
     //   placeholder="Enter new task"
     // />
   );
+}
+
+function capitalizeFirstLetter(word: string) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
 }
