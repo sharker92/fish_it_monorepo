@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FormInputField2 } from './FormInputField2';
 import { FormInputField } from './FormInputField';
 import { FormSubmitButton } from './FormSubmitButton';
 import { AlsuperItemType } from '../lib/types/alsuperItemType';
@@ -19,10 +18,7 @@ const AddForm = ({ addItem }: { addItem: any }) => {
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
     console.log('userInputHC2', formData);
   };
 
@@ -30,23 +26,22 @@ const AddForm = ({ addItem }: { addItem: any }) => {
     console.log('AHA!');
     e.preventDefault();
     if (true) {
-      //todo protect addItem if it doesn't have all required elements
+      // TODO: protect addItem if it doesn't have all required elements
       console.log('AHA!2');
       console.log(formData);
       addItem(formData);
     }
     setFormData(EMPTY_CART_ITEM);
   };
-
+  // TODO: align button
   return (
     <form onSubmit={handleSubmit}>
-      <div className="row">
-        <div className="col-7">
+      <div className="space-y-4">
+        <div>
           <FormInputField formData={formData} onChange={handleChange} />
-          {/* <FormInputField2 value={formData} onChange={handleChange} /> */}
         </div>
 
-        <div className="col-5">
+        <div className="ml-20">
           <FormSubmitButton />
         </div>
       </div>
@@ -55,3 +50,4 @@ const AddForm = ({ addItem }: { addItem: any }) => {
 };
 
 export default AddForm;
+

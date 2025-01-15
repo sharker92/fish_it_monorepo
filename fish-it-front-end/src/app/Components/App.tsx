@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
 import React, { useState } from 'react';
 
 import AddForm from './AddForm';
 // import list from "./list.json"
-import list from './monthList.json';
+import list from './monthList.json'; // TODO: set correct list
 import { AlsuperItemType } from '../lib/types/alsuperItemType';
 import ItemsList from './ItemsList';
 
@@ -16,26 +16,19 @@ export default function App() {
   }
 
   const addItem = (formData: AlsuperItemType) => {
-    // const newValue = { //!!HERE 04/11/2024
-    //   name: userInput,
-    //   itemId: Date.now(),
-    //   quantity: 1,
-    //   branch_id: 6,
-    //   unit: 'pza',
-    //   variant: null,
-    //   comment: '',
-    // }; //! this isn't working we need to take an object and assign it to the newValue variable
+    console.log(itemList);
     setItemList((itemList) => [formData, ...itemList]);
   };
 
   return (
-    <div className="container">
-      <div className="row mb-1 ms-1 me-1 mt-2">
+    <div className="container mx-auto grid grid-cols-2 gap-4">
+      <div className="mt-20">
         <AddForm addItem={addItem}></AddForm>
       </div>
-      <div className="row mb-3 ms-1 me-1 mt-3">
+      <div className="">
         <ItemsList entries={itemList} deleteItem={deleteItem} />
       </div>
     </div>
   );
 }
+

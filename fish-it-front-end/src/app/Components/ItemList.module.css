@@ -1,9 +1,19 @@
 .btn {
-  @apply font-bold py-2 px-4 rounded;
+  @apply font-semibold text-center py-2 px-4 rounded;
 }
-.btn-blue {
-  @apply bg-blue-500 text-white;
+.btn-large {
+  @apply px-24;
 }
-.btn-blue:hover {
-  @apply bg-blue-700;
+.btn-white {
+  @apply bg-white text-gray-800 border border-gray-200;
 }
+.btn-white:hover {
+  @apply bg-blue-700 text-white;
+}
+.expanded-content {
+  @apply mt-4 p-4 bg-gray-100;
+}
+
+/* <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold */
+/* hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"> */
+

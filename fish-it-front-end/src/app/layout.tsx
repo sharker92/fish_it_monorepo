@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header>
-          <h1 className="mt-4 text-center text-4xl font-semibold text-gray-950">
+          <h1 className="mt-4 p-4 mb-8 text-center text-4xl font-semibold text-gray-950">
             Welcome to Fish It 🎣
           </h1>
         </header>
@@ -39,3 +39,4 @@ export default function RootLayout({
     </html>
   );
 }
+

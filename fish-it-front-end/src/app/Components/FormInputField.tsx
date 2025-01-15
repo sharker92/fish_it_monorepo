@@ -3,26 +3,27 @@ import { capitalizeFirstLetter } from '../helpers/tools';
 
 export function FormInputField({ formData, onChange }: any) {
   const formDataMetaData = [
-    { id: 'name', type: 'text', placeholder: 'Enter new task' },
-    { id: 'itemId', type: 'number', placeholder: 'Enter new task' },
-    { id: 'quantity', type: 'number', placeholder: 'Enter new task' },
-    { id: 'branch_id', type: 'number', placeholder: 'Enter new task' },
-    { id: 'unit', type: 'text', placeholder: 'Enter new task' },
-    { id: 'variant', type: 'text', placeholder: 'Enter new task' },
-    { id: 'comment', type: 'text', placeholder: 'Enter new task' },
+    { id: 'name', type: 'text', placeholder: 'Enter product name' },
+    { id: 'itemId', type: 'number', placeholder: 'Enter product ID' },
+    { id: 'quantity', type: 'number', placeholder: 'Enter product quantity' },
+    { id: 'branch_id', type: 'number', placeholder: 'Enter product branch ID' },
+    { id: 'unit', type: 'text', placeholder: 'Enter product unit' },
+    { id: 'variant', type: 'text', placeholder: 'Enter product variant' },
+    { id: 'comment', type: 'text', placeholder: 'Enter product comment' },
     {
       id: 'unidad',
       type: 'number',
-      placeholder: 'Es la unidad por pieza calculada por alsuper',
+      placeholder: 'Enter unit per piece value by Alsuper',
     },
   ];
+
   return (
     <>
       {formDataMetaData.map((metaData) => (
-        <div>
-          <label htmlFor={metaData.id}>
-            {capitalizeFirstLetter(metaData.id)}:
-          </label>
+        <div className="flex items-center space-x-6">
+          <label htmlFor={metaData.id} className="w-16">
+            {capitalizeFirstLetter(metaData.id)}:{' '}
+          </label>{' '}
           <input
             key={metaData.id}
             id={metaData.id}
@@ -31,16 +32,11 @@ export function FormInputField({ formData, onChange }: any) {
             value={formData[metaData.id]}
             onChange={onChange}
             placeholder={metaData.placeholder}
+            className="w-64"
           />
         </div>
       ))}
     </>
-    // <input
-    //   className="px-2 mt-2 mb-2 ms-1"
-    //   value={value}
-    //   type="text"
-    //   onChange={onChange}
-    //   placeholder="Enter new task"
-    // />
   );
 }
+

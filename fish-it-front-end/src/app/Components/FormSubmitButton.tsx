@@ -1,5 +1,9 @@
-import React from "react";
+import React from 'react';
+import styles from './ItemList.module.css';
 
 export function FormSubmitButton() {
-  return <button className="px-2 mt-2 mb-2 ms-1">Add Item</button>;
+  return (
+    <button className={`${styles.btn} ${styles['btn-large']}`}>Add Item</button>
+  );
 }
+
