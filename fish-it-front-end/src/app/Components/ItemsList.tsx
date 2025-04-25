@@ -9,9 +9,9 @@ export default function ItemsList({
   entries: AlsuperItemType[];
   deleteItem: (itemId: number) => void;
 }>) {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState<number| null>(null);
 
-  const toggleExpand = (index) => {
+  const toggleExpand = (index: number ) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
   return (
