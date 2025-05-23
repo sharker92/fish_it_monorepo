@@ -62,7 +62,7 @@
   {
     "name": "Limón agrio sin semilla",
     "itemId": 132,
-    "quantity": 25,
+    "quantity": 5,
     "branch_id": 6,
     "unit": "pza",
     "variant": null,
@@ -71,7 +71,7 @@
   {
     "name": "Limón agrio",
     "itemId": 3,
-    "quantity": 25,
+    "quantity": 0.5,
     "branch_id": 6,
     "unit": "pza",
     "variant": null,
