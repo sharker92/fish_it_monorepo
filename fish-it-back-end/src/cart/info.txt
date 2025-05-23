@@ -1,0 +1,3 @@
+Los limones aunque le pongas pieza los carga en kilos y el peso esta en kilos también,
+para sacar la cantidad hay que dividir cantidad/pesoXunidad.
+
