@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 
 import AddForm from './AddForm';
-// import list from "./list.json"
-import list from './monthList.json'; // TODO: set correct list
-import { AlsuperItemType } from '../lib/types/alsuperItemType';
+// import list from "./list.json"// TODO: get list by API
+import list from './monthList.json'; // TODO: set weekly list
+import { AlsuperItemType } from '../types/alsuperItemType';
 import ItemsList from './ItemsList';
 
 export default function App() {

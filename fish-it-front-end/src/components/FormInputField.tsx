@@ -1,5 +1,5 @@
 import React from 'react';
-import { capitalizeFirstLetter } from '../helpers/tools';
+import { capitalizeFirstLetter } from '../utils/tools';
 
 export function FormInputField({ formData, onChange }: any) {
   const formDataMetaData = [
@@ -16,7 +16,7 @@ export function FormInputField({ formData, onChange }: any) {
       placeholder: 'Enter unit per piece value by Alsuper',
     },
   ];
-
+  // TODO: bold at names and separate in y a little bit
   return (
     <>
       {formDataMetaData.map((metaData) => (

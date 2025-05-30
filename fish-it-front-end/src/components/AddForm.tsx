@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FormInputField } from './FormInputField';
 import { FormSubmitButton } from './FormSubmitButton';
-import { AlsuperItemType } from '../lib/types/alsuperItemType';
+import { AlsuperItemType } from '../types/alsuperItemType';
 
 const AddForm = ({ addItem }: { addItem: any }) => {
   const EMPTY_CART_ITEM: AlsuperItemType = {

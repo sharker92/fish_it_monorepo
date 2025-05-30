@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AlsuperItemType } from '../lib/types/alsuperItemType';
+import { AlsuperItemType } from '../types/alsuperItemType';
 import styles from './ItemList.module.css';
 
 export default function ItemsList({
